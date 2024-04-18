@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import MainCard from '../cards/mainCard';
 import MiChambaCard from '../cards/misChambasCard';
+import MainInbox from '../cards/mainInbox';
 
 export default function MainMenu(){
   return(
@@ -13,13 +14,13 @@ export default function MainMenu(){
       <ScrollView style={{flex:1,width:'100%'}}>
         <View style={styles.body}>
           <MiChambaCard/>
+          
+          <MainInbox/>
+
           <MainCard/>
         </View>
       </ScrollView>
       </View>
-      
-    
-
   );
 }
 
