@@ -32,7 +32,9 @@ const styles = StyleSheet.create({
     width:100,
     alignItems:'center',
     justifyContent:'center',
-    margin:20
+    margin:20,
+    marginTop:0,
+    marginBottom:40
   },
   body:{
     width:400,
