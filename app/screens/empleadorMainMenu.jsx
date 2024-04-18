@@ -4,16 +4,17 @@ import React, { useContext, useCallback, useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import MainCard from '../cards/mainCard';
+
+import MiChambaCard from '../cards/misChambasCard';
 import Header from '../buttons/header';
-export default function MainMenu(){
+export default function EmpladorMain(){
   return(
       <>
-      <Header color="#3884fd" text='Hola, Kanye'/>
+      <Header color="#35DB5A" text='Mis Chambas'/>
       <View style={styles.body}>
       <ScrollView style={{flex:1,width:'100%'}}>
         <View style={styles.body}>
-          <MainCard/>
+          <MiChambaCard/>
         </View>
       </ScrollView>
       </View>

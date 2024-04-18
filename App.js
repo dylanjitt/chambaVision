@@ -2,10 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 import MainMenu from './app/screens/mainMenu';
+import EmpladorMain from './app/screens/empleadorMainMenu';
 
 export default function App() {
   return (
-    <MainMenu/>
+    <EmpladorMain/>
   );
 }
 
