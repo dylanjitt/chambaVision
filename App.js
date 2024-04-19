@@ -2,12 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 import MainMenu from './app/screens/mainMenu';
-import EmpladorMain from './app/screens/empleadorMainMenu';
 import ChambaMenu from './app/screens/chambaMenu';
 import PostulantesMenu from './app/screens/postulantesMenu';
+import EmpladorMain from './app/screens/empleadorMainMenu';
+import MainChambaProceso from './app/screens/screenChambaProceso';
+import MainChambaProcesoEmpleador from './app/screens/screenChambaProcesoEmpleador';
+import MainChambaTerminada from './app/screens/screenChambaTerminada';
+import MainScreenCrearChamba from './app/screens/screenCrearChamba';
+import MainScreeninbox from './app/screens/screenInbox';
+
 export default function App() {
   return (
-    <PostulantesMenu/>
+    <MainChambaTerminada/>
   );
 }
 

@@ -17,9 +17,7 @@ export default function MainMenu(){
         </View>
       </ScrollView>
       </View>
-      </>    
-    
-
+      </>
   );
 }
 
