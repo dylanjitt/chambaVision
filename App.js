@@ -6,6 +6,7 @@ import MainScreeninbox from './app/screens/screenInbox';
 import MainChambaProceso from './app/screens/screenChambaProceso';
 import MainChambaTerminada from './app/screens/screenChambaTerminada';
 import MainChambaProcesoEmpleador from './app/screens/screenChambaProcesoEmpleador';
+import MainScreenCrearChamba from './app/screens/screenCrearChamba';
 
 export default function App() {
   return (
@@ -13,7 +14,8 @@ export default function App() {
     //<MainScreeninbox/>
     //<MainChambaProceso/>
     //<MainChambaTerminada/>
-    <MainChambaProcesoEmpleador/>
+    //<MainChambaProcesoEmpleador/>
+    <MainScreenCrearChamba/>
   );
 }
 
