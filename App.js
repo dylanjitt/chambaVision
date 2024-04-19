@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     justifyContent:'center'
   },
   half1:{
-    //flex:2,
     backgroundColor:'#1D3758',
     alignItems:'center',
     justifyContent:'center',
