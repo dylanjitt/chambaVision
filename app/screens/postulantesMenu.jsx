@@ -5,10 +5,11 @@ import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import {LinearGradient} from 'expo-linear-gradient'
 
+import ProfileCard from '../cards/profileCard';
 
 const StatusBarHeight = Platform.OS === 'ios' ? 50 : 10;
 
-export default function ChambaMenu(){
+export default function PostulantesMenu(){
   return(
     <View style={styles.body}>
       <StatusBar barStyle={'light-content'}/>
@@ -17,20 +18,17 @@ export default function ChambaMenu(){
             colors={['rgba(0,0,0,0.85)', 'rgba(0,0,0,0)']}
             style={styles.overlay} />
         </ImageBackground>
-     
-      <Text style={styles.title}>Necesito Plomero</Text>
-      <Text style={styles.subtitle}>Se necesita plomero para el arreglo de tuberias en mi cocina.</Text>
-      <Text style={styles.text}>Descripcion corta del problema como por ejemplo que empezo a gotear hace 2 dias en la parte de desechos, solo lavamos platos y caen uno que otro monton de arroz, pero no creo que ese sea el problema gotea mucho y no veo fisuras en los tubos de salida.</Text>
-      <Text style={styles.price}>500 Bs.</Text>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Postular</Text>      
-      </TouchableOpacity>
+      <ScrollView>
+        <Text style={styles.title}>Necesito Plomero</Text>
+        <Text style={styles.text}>Se necesita plomero para el arreglo de tuberias en mi cocina.</Text>
+        <Text style={styles.price}>500 Bs.</Text>
+        <View style={{width:'100%',height:1,backgroundColor:'#000',marginTop:15}}/>
+        <Text style={styles.title}>Postulantes</Text>
+        <View style={{alignItems:'center',justifyContent:'center',width:'100%'}}>
+          <ProfileCard/>
+        </View>
 
-      <TouchableOpacity style={{flexDirection:'row',alignItems:'center',justifyContent:'center',margin:40}}>
-          <View style={styles.userImage}></View>
-          <Text style={styles.userText}>PandaFernandez</Text>
-      </TouchableOpacity>
-
+      </ScrollView>
     </View>
   )
 }
@@ -46,8 +44,8 @@ const styles = StyleSheet.create(
     image:{
       width:"100%",
       height:300,
-      borderBottomLeftRadius:15,
-      borderBottomRightRadius:15,
+      borderBottomLeftRadius:5,
+      borderBottomRightRadius:5,
       overflow:'hidden'
     },
     overlay: {
@@ -61,33 +59,27 @@ const styles = StyleSheet.create(
       zIndex: 1, // Asegurar que la capa esté encima de la imagen
     },
     title:{
-      fontSize:34,
+      fontSize:28,
       fontWeight:'bold',
       color:'#000',
-      margin:18
-    },
-    subtitle:{
-      color:'#4b4b4b',
-      textAlign:'center',
-      fontSize:20,
-      fontWeight:'600',
-      padding:40,
-      paddingTop:10,
-      paddingBottom:20
+      margin:18,
+      marginLeft:0
     },
     text:{
       color:'#4b4b4b',
-      textAlign:'center',
+      textAlign:'left',
       fontSize:20,
       fontWeight:'normal',
-      padding:40,
+      padding:20,
       paddingTop:0,
-      paddingBottom:20
+      paddingBottom:20,
+      paddingLeft:0
     },
     price:{
       fontSize:30,
       color:"#000",
-      fontWeight:'700'
+      fontWeight:'700',
+      marginLeft:0
     },
     button:{
       width:180,

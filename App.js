@@ -4,9 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import MainMenu from './app/screens/mainMenu';
 import EmpladorMain from './app/screens/empleadorMainMenu';
 import ChambaMenu from './app/screens/chambaMenu';
+import PostulantesMenu from './app/screens/postulantesMenu';
 export default function App() {
   return (
-    <ChambaMenu/>
+    <PostulantesMenu/>
   );
 }
 
