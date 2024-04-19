@@ -3,10 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import MainMenu from './app/screens/mainMenu';
 import EmpladorMain from './app/screens/empleadorMainMenu';
-
+import ChambaMenu from './app/screens/chambaMenu';
 export default function App() {
   return (
-    <EmpladorMain/>
+    <ChambaMenu/>
   );
 }
 
