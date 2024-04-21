@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Login from './app/screens/login';
-
+import CreateAccount from './app/screens/createAcc';
 import MainMenu from './app/screens/mainMenu';
 import ChambaMenu from './app/screens/chambaMenu';
 import PostulantesMenu from './app/screens/postulantesMenu';
@@ -15,7 +15,7 @@ import MainScreeninbox from './app/screens/screenInbox';
 
 export default function App() {
   return (
-    <Login/>
+    <CreateAccount/>
   );
 }
 
