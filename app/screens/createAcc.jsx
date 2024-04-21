@@ -10,10 +10,15 @@ export default function CreateAccount(){
 
   const [confirm,setConfirm]=useState(true)
 
+  const [name,setName]=useState('')
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
+  const [password2,setPwd2]=useState('')
+
   return(
     <View style={style.body}>
       <ScrollView>
-        <View style={style.body}>
+        <View style={[style.body,{width:430}]}>
           <View style={{marginTop:StatusBarHeight+15,margin:20,width:'100%',alignItems:'flex-start'}}>
             <Text style={style.titleHeader}>Crear Cuenta</Text>
           </View>
@@ -30,7 +35,7 @@ export default function CreateAccount(){
 
           <View style={{alignItems:'flex-start',marginBottom:25}}>
             <Text style={style.subtitle}>Correo Electrónico</Text>
-            <TextInput inputMode='email' style={style.inputBox} placeholderTextColor={'#00000050'} placeholder='perry@gmail.com'/>
+            <TextInput onChangeText={(value)=>setEmail(value)} inputMode='email' style={style.inputBox} placeholderTextColor={'#00000050'} placeholder='perry@gmail.com'/>
           </View>
 
           <View style={{flexDirection:'row',marginBottom:25}}>
@@ -76,12 +81,12 @@ export default function CreateAccount(){
 
           <View style={{alignItems:'flex-start', marginBottom:25}}>
             <Text style={style.subtitle}>Contraseña</Text>
-            <TextInput style={style.inputBox} placeholderTextColor={'#00000050'} placeholder='8 Caracteres min. 1 digito y 1 mayus'/>
+            <TextInput onChangeText={(value)=>setPassword(value)} style={style.inputBox} placeholderTextColor={'#00000050'} placeholder='8 Caracteres min. 1 digito y 1 mayus'/>
           </View>
 
           <View style={{alignItems:'flex-start',marginBottom:25}}>
             <Text style={style.subtitle}>Repetir Contraseña</Text>
-            <TextInput style={style.inputBox} placeholderTextColor={'#00000050'} placeholder='SwiftiesDeMierd4'/>
+            <TextInput onChangeText={(value)=>setPwd2(value)} style={style.inputBox} placeholderTextColor={'#00000050'} placeholder='Karma'/>
           </View>
 
           <View style={{flexDirection:'row',marginBottom:30,justifyContent:'center',alignItems:'center'}}>
@@ -115,7 +120,8 @@ const style = StyleSheet.create(
     titleHeader:{
       fontSize:28,
       fontWeight:'bold',
-      color:'#fff'
+      color:'#fff',
+      paddingLeft:20
     },
     subtitle:{
       fontSize:20,

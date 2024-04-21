@@ -5,6 +5,11 @@ import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function Login(){
+
+  const [name,setName]=useState('')
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
+
   return(
     <View style={style.body}>
       <StatusBar barStyle={'light-content'}/>
