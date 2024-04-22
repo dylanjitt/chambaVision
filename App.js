@@ -64,16 +64,14 @@ function Main(){
       }
       return iconname;
     },
-    header:()=>null
+    header:()=>null,
+    tabBarActiveTintColor:'#3884fd',
+    tabBarInactiveTintColor:'#fff',
+    tabBarShowLabel:false
     })}
-    tabBarOptions={ {
-      activeTintColor:'#3884fd',
-      inactiveTintColor:'#fff',
-      showLabel:false,
-      headerShown:false
-    }}>
+    >
 
-          <Tab.Screen name='inbox' component={MainScreeninbox} />
+          <Tab.Screen name='inbox' component={MainScreeninbox} options={{tabBarBadge:2}}/>
           <Tab.Screen name='mainChamba' component={MainMenu} />
           <Tab.Screen name='buscar' component={BucadorMain} />
           
@@ -99,14 +97,12 @@ function Empleador(){
       }
       return iconname;
     },
-    header:()=>null
+    header:()=>null,
+    tabBarActiveTintColor:'#35DB5A',
+    tabBarInactiveTintColor:'#fff',
+    tabBarShowLabel:false
     })}
-    tabBarOptions={ {
-      activeTintColor:'#35DB5A',
-      inactiveTintColor:'#fff',
-      showLabel:false,
-      headerShown:false
-    }}>
+    >
           <Tab.Screen name='main' component={EmpladorMain} />
           <Tab.Screen name='add' component={MainScreenCrearChamba} />
           <Tab.Screen name='search' component={BuscadorEmpleador} />
