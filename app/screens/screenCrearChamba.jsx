@@ -22,19 +22,19 @@ export default function MainScreenCrearChamba(){
                     <Text style={styles.title2}>
                         Titulo
                     </Text>
-                    <TextInput style={styles.boxtitle} placeholder='   Tu Problema'></TextInput>
+                    <TextInput style={styles.boxtitle} placeholder='Tu Problema'></TextInput>
                 </View>
                 <View>
                     <Text style={styles.title2}>
                         Descripcion Breve
                     </Text>
-                    <TextInput style={styles.boxDescB} placeholder='   Cuenta en 2 lineas un resumen de tu problema.'></TextInput>
+                    <TextInput style={styles.boxDescB} placeholder='Cuenta en 2 lineas un resumen de tu problema.'></TextInput>
                 </View>
                 <View>
                     <Text style={styles.title2}>
                         Descripcion Completa
                     </Text>
-                    <TextInput style={styles.boxDescC} placeholder='   Cuenta a Mayor detalle el problema que tienes'></TextInput>
+                    <TextInput style={styles.boxDescC} placeholder='Cuenta a Mayor detalle el problema que tienes'></TextInput>
                 </View>
                 <View>
                     <Text style={styles.title2}>
@@ -52,7 +52,7 @@ export default function MainScreenCrearChamba(){
                     </Text>
                 </View>
                 <View style={styles.view}>
-                  <TextInput style={styles.numE} placeholder='   Max:6'></TextInput>
+                  <TextInput style={styles.numE} placeholder='Max:6'></TextInput>
                 </View>
                 <View>
                     <Text style={styles.title2}>
@@ -60,7 +60,7 @@ export default function MainScreenCrearChamba(){
                     </Text>
                 </View>
                 <View style={styles.view}>
-                  <TextInput style={styles.numE} placeholder='   Bs.'></TextInput>
+                  <TextInput style={styles.numE} placeholder='Bs.'></TextInput>
                 </View>
                 <View style={styles.view}>
                   <TouchableOpacity style={styles.botonC}>
@@ -116,6 +116,7 @@ export default function MainScreenCrearChamba(){
       boxtitle:{
         width:400,
         height: 40,
+        paddingLeft: 15,
         borderWidth:2,
         borderColor:'#555',
         borderRadius:10,
@@ -126,17 +127,19 @@ export default function MainScreenCrearChamba(){
         height: 100,
         borderWidth:2,
         borderColor:'#555',
+        paddingLeft:15,
         borderRadius:10,
         margin:13,
-
       },
       boxDescC:{
         width:400,
         height: 150,
         borderWidth:2,
         borderColor:'#555',
+        paddingLeft:15,
         borderRadius:10,
         margin:13,
+        justifyContent:'flex-start',
 
       },
       inputImages:{
@@ -151,6 +154,7 @@ export default function MainScreenCrearChamba(){
         height: 50,
         borderWidth:2,
         borderColor:'#555',
+        paddingLeft:15,
         borderRadius:10,
         margin:20,
       },

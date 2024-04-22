@@ -12,10 +12,15 @@ import MainChambaProcesoEmpleador from './app/screens/screenChambaProcesoEmplead
 import MainChambaTerminada from './app/screens/screenChambaTerminada';
 import MainScreenCrearChamba from './app/screens/screenCrearChamba';
 import MainScreeninbox from './app/screens/screenInbox';
+import BucadorMain from './app/screens/screenBusqueda';
 
 export default function App() {
   return (
-    <CreateAccount/>
+    //<CreateAccount/>
+    //<MainScreenCrearChamba/>
+    //<MainChambaProceso/>
+    //<MainScreeninbox/>
+    <BucadorMain/>
   );
 }
 

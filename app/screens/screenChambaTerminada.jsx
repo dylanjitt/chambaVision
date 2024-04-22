@@ -76,7 +76,8 @@ const styles = StyleSheet.create(
         fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'normal',
-        marginLeft:10
+        marginLeft:10,
+        textAlign:'center',
       },
       viewDes:{
         width:370,
