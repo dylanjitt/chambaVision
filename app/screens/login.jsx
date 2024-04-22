@@ -4,11 +4,19 @@ import React, { useContext, useCallback, useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function Login(){
+export default function Login({navigation}){
 
   const [name,setName]=useState('')
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
+
+  const goToCreate = () => {
+    navigation.navigate('createAccount')
+  }
+
+  const gotoMain = () => {
+    navigation.navigate('Main',{screen:'mainChamba'})
+  }
 
   return(
     <View style={style.body}>
@@ -18,12 +26,12 @@ export default function Login(){
           <Text style={style.textLogo}>ChambaVision</Text>
           <TextInput style={style.inputBox} placeholderTextColor={'#00000050'} placeholder='Correo Electrónico'/>
           <TextInput style={style.inputBox} placeholderTextColor={'#00000050'} placeholder='Contraseña'/>
-          <TouchableOpacity style={style.button}>
+          <TouchableOpacity onPress={gotoMain} style={style.button}>
             <Text style={style.textButton}>Iniciar Sesión</Text>
           </TouchableOpacity>
         </View>
         <View style={{alignItems:'center',paddingBottom:30}}>
-        <TouchableOpacity style={{alignItems:'center',margin:10}}>
+        <TouchableOpacity onPress={goToCreate} style={{alignItems:'center',margin:10}}>
           <Text style={[style.textButton,{fontWeight:'bold'}]}>Crear Cuenta</Text>
         </TouchableOpacity>
         <TouchableOpacity>

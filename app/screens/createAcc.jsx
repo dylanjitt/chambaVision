@@ -6,7 +6,7 @@ import { MaterialCommunityIcons,FontAwesome,AntDesign} from '@expo/vector-icons'
 
 const StatusBarHeight = Platform.OS === 'ios' ? 50 : 10;
 
-export default function CreateAccount(){
+export default function CreateAccount({navigation}){
 
   const [confirm,setConfirm]=useState(true)
 
@@ -14,6 +14,10 @@ export default function CreateAccount(){
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
   const [password2,setPwd2]=useState('')
+
+  const goToMain = () => {
+    navigation.navigate('login')
+  }
 
   return(
     <View style={style.body}>

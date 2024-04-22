@@ -6,14 +6,20 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import MainCard from '../cards/mainCard';
 import Header from '../buttons/header';
-export default function MainMenu(){
+export default function MainMenu({navigation}){
+
+const goToMenuChamba = () => {
+  navigation.navigate('chambaMenu')
+}
+
   return(
       <>
       <Header color="#3884fd" text='Hola, Kanye'/>
+      <StatusBar barStyle={'dark-content'}/>
       <View style={styles.body}>
       <ScrollView style={{flex:1,width:'100%'}}>
         <View style={styles.body}>
-          <MainCard/>
+          <MainCard exe={()=>goToMenuChamba()}/>
         </View>
       </ScrollView>
       </View>

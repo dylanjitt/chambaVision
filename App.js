@@ -13,25 +13,42 @@ import MainChambaTerminada from './app/screens/screenChambaTerminada';
 import MainScreenCrearChamba from './app/screens/screenCrearChamba';
 import MainScreeninbox from './app/screens/screenInbox';
 
+
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+
+const Stack = createStackNavigator();
+
+const Tab = createBottomTabNavigator();
 export default function App() {
   return (
-    <CreateAccount/>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{header:()=>null}}>
+        <Stack.Screen name='login' component={Login}/>
+        <Stack.Screen name='createAccount' component={CreateAccount}/>
+        <Stack.Screen name='Main' component={Main}/>
+        <Stack.Screen name='chambaMenu' component={ChambaMenu}/>
+        
+      </Stack.Navigator>
+
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    display:'flex',
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems:'center',
-    justifyContent:'center'
-  },
-  half1:{
-    backgroundColor:'#1D3758',
-    alignItems:'center',
-    justifyContent:'center',
-    width:'100%',
-    height:100
-  }
-});
+function Main(){
+  return(
+  <Tab.Navigator screenOptions={{header:()=>null}}>
+          <Tab.Screen name='mainChamba' component={MainMenu}/>
+          <Tab.Screen name='inbox' component={MainScreeninbox}/>
+  </Tab.Navigator>)
+}
+
+function flujoChamba(){
+  <Stack.Navigator>
+    {/* <Stack.Screen name='chamba' component={ChambaMenu}/> */}
+
+  </Stack.Navigator>
+}
+
+

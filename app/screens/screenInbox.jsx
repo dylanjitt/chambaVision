@@ -42,7 +42,7 @@ export default function MainScreeninbox(){
       title:{
         color:'#000',
         fontSize:30,
-        fontFamily:'Space Grotesk',
+        // fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'normal',
         margin:20,
@@ -53,7 +53,7 @@ export default function MainScreeninbox(){
       userEncabezado:{
         color:'#000',
         fontSize:30,
-        fontFamily:'Space Grotesk',
+        // fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'normal',
         margin:10,
