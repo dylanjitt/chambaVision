@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
 import MiChambaCard from '../cards/misChambasCard';
+import MainCard from '../cards/mainCard';
 import Header from '../buttons/header';
 
 export default function BuscadorMain(){
@@ -14,7 +15,7 @@ export default function BuscadorMain(){
         <ScrollView style={{flex:1,width:'100%'}}>
             <Header color="#3884fd" text='Hola, Kanye'/>
             <View style={styles.view}>
-                <MiChambaCard/>
+                <MainCard/>
             </View>
            
         </ScrollView>

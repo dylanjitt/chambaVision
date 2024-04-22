@@ -1,5 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar, setStatusBarBackgroundColor } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import {Entypo,FontAwesome,MaterialIcons} from '@expo/vector-icons'
+
 
 import Login from './app/screens/login';
 import CreateAccount from './app/screens/createAcc';
@@ -19,12 +21,12 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 
+
 const Stack = createStackNavigator();
 
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
-<<<<<<< HEAD
     <NavigationContainer>
       <Stack.Navigator screenOptions={{header:()=>null}}>
         <Stack.Screen name='login' component={Login}/>
@@ -35,22 +37,39 @@ export default function App() {
       </Stack.Navigator>
 
     </NavigationContainer>
-=======
-    //<CreateAccount/>
-    //<MainScreenCrearChamba/>
-    //<MainChambaProceso/>
-    //<MainScreeninbox/>
-    <BucadorMain/>
->>>>>>> Thompson154
   );
 }
 
 function Main(){
   return(
-  <Tab.Navigator screenOptions={{header:()=>null}}>
-          <Tab.Screen name='mainChamba' component={MainMenu}/>
-          <Tab.Screen name='inbox' component={MainScreeninbox}/>
-  </Tab.Navigator>)
+  <Tab.Navigator 
+  screenOptions={({route})=>({
+    tabBarStyle:{
+      backgroundColor:'#0A1B2B',
+      borderRadius:10
+    },
+    tabBarIcon: ({focused,size,color})=>{
+      let iconname;
+      if (route.name=='buscar'){
+        iconname=<FontAwesome name="search" size={32} color={color}/>
+      }else if (route.name=='mainChamba'){
+        iconname=<Entypo name="home" size={36} color={color} />
+      }else if (route.name=='inbox'){
+        iconname=<MaterialIcons name="email" size={36} color={color} />
+      }
+      return iconname;
+    },
+    })}
+    tabBarOptions={ {
+      activeTintColor:'#3884fd',
+      inactiveTintColor:'#fff',
+      showLabel:false,
+      headerShown:false
+    }}>
+          <Tab.Screen name='buscar' component={BucadorMain} options={{headerShown:false}}/>
+          <Tab.Screen name='mainChamba' component={MainMenu} options={{headerShown:false}}/>
+          <Tab.Screen name='inbox' component={MainScreeninbox} options={{headerShown:false}}/>
+  </Tab.Navigator>);
 }
 
 function flujoChamba(){

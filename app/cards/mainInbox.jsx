@@ -61,7 +61,7 @@ export default function MainInbox(){
     },
 
     body2: {
-      width:200,
+      width:205,
       height:80,
       flexDirection: 'column',
       backgroundColor:'#fff',  
@@ -84,7 +84,7 @@ export default function MainInbox(){
       height:40,
       alignItems:'center',
       justifyContent:'center',
-      borderRadius:18,
+      borderRadius:100,
       backgroundColor:'#1fd655',
       marginRight:13,
     },
