@@ -5,7 +5,7 @@ import React, { useContext, useCallback, useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function MiChambaCard(){
+export default function MiChambaCard(props){
   return(
     <View style={styles.container}>
       <View style={styles.body}>
@@ -15,7 +15,7 @@ export default function MiChambaCard(){
           <Text style={styles.descr}>Se necesita plomero para el arreglo de tuberías en mi cocina</Text>
           <Text style={styles.price}>500 Bs</Text>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress={props.exe} style={styles.button}>
           <Text style={styles.buttonText}>Ver Postulantes</Text>
         </TouchableOpacity>
       </View>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   userText:{
     color:'#000',
-    fontFamily:"Bree Serif",
+    // fontFamily:"Bree Serif",
     fontStyle:'normal',
     fontWeight:'bold',
     fontSize: 24
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   title:{
     color:'#000',
     fontSize:24,
-    fontFamily:'Space Grotesk',
+   //fontFamily:'Space Grotesk',
     fontStyle:'normal',
     fontWeight:'bold',
     margin:10
@@ -82,17 +82,19 @@ const styles = StyleSheet.create({
   descr:{
     color:'#000',
     fontSize:18,
-    fontFamily:'Space Grotesk',
+    // fontFamily:'Space Grotesk',
     fontStyle:'normal',
     fontWeight:'normal',
     marginLeft:10,
     marginRight:10,
-    textAlign:'center'
+    textAlign:'center',
+    paddingLeft:10,
+    paddingRight:10
   },
   price:{
     color:'#000',
     fontSize:24,
-    fontFamily:'Space Grotesk',
+    // fontFamily:'Space Grotesk',
     fontStyle:'normal',
     fontWeight:'600',
     margin:10
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
   buttonText:{
     color:'#fff',
     fontSize:28,
-    fontFamily:'Space Grotesk',
+    // fontFamily:'Space Grotesk',
     fontStyle:'normal',
     fontWeight:'600',
     

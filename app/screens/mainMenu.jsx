@@ -12,9 +12,13 @@ const goToMenuChamba = () => {
   navigation.navigate('chambaMenu')
 }
 
+const switchMode = () => {
+  navigation.navigate('empleadorMain',{screen:'main'})
+}
+
   return(
       <>
-      <Header color="#3884fd" text='Hola, Kanye'/>
+      <Header exe={switchMode} color="#3884fd" text='Hola, Kanye'/>
       <StatusBar barStyle={'dark-content'}/>
       <View style={styles.body}>
       <ScrollView style={{flex:1,width:'100%'}}>

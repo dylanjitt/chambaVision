@@ -6,13 +6,13 @@ import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons,Ionicons } from '@expo/vector-icons';
 
 
-export default function ProfileCard(){
+export default function ProfileCard(props){
   return(
     <View style={style.body}>
       <Ionicons name='person' size={64} color={'#404040'}/>
       <Text style={style.person}>Juan Perez</Text>
       <Text style={style.descr}>Especialista en Jardinería</Text>
-      <TouchableOpacity style={style.button}>
+      <TouchableOpacity onPress={props.exe} style={style.button}>
         <Text style={style.buttonText}>Ver perfil</Text>      
       </TouchableOpacity>
     </View>

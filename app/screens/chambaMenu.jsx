@@ -8,7 +8,11 @@ import {LinearGradient} from 'expo-linear-gradient'
 
 const StatusBarHeight = Platform.OS === 'ios' ? 50 : 10;
 
-export default function ChambaMenu(){
+export default function ChambaMenu({navigation}){
+
+  const backMain = () => {
+    navigation.navigate('Main',{screen:'mainChamba'})
+  }
   return(
     <View style={styles.body}>
       <StatusBar barStyle={'light-content'}/>
@@ -22,7 +26,7 @@ export default function ChambaMenu(){
       <Text style={styles.subtitle}>Se necesita plomero para el arreglo de tuberias en mi cocina.</Text>
       <Text style={styles.text}>Descripcion corta del problema como por ejemplo que empezo a gotear hace 2 dias en la parte de desechos, solo lavamos platos y caen uno que otro monton de arroz, pero no creo que ese sea el problema gotea mucho y no veo fisuras en los tubos de salida.</Text>
       <Text style={styles.price}>500 Bs.</Text>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={backMain} style={styles.button}>
         <Text style={styles.buttonText}>Postular</Text>      
       </TouchableOpacity>
 

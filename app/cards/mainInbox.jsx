@@ -5,7 +5,7 @@ import React, { useContext, useCallback, useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons, Fontisto ,FontAwesome} from '@expo/vector-icons';
 
-export default function MainInbox(){
+export default function MainInbox(props){
     return(
       <View style={styles.container}>
       <View style={styles.body}>
@@ -21,7 +21,7 @@ export default function MainInbox(){
             </Text>
         </View>
         <View>
-          <TouchableOpacity style={styles.buttonAceptar}>
+          <TouchableOpacity onPress={props.exe} style={styles.buttonAceptar}>
           <Fontisto name="check" size={20} color="#fff" />
           </TouchableOpacity>
         </View>

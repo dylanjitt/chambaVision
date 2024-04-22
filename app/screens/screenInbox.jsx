@@ -6,7 +6,11 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import MainInbox from '../cards/mainInbox';
 import Header from '../buttons/header';
-export default function MainScreeninbox(){
+export default function MainScreeninbox({navigation}){
+
+  const goToChamba = () => {
+    navigation.navigate('inProcess')
+  }
     return(
         <View style={styles.body}>
         <ScrollView style={{flex:1,width:'100%'}}>
@@ -15,7 +19,7 @@ export default function MainScreeninbox(){
                 Mas Recientes
             </Text>
           <View style={styles.body}>
-            <MainInbox/>
+            <MainInbox exe={goToChamba} />
             <MainInbox/>
           </View>
         </ScrollView>

@@ -2,14 +2,21 @@ import { StyleSheet, Text, View, Image, Platform, NativeModules, SafeAreaView, T
 
 import React, { useContext, useCallback, useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons,FontAwesome } from '@expo/vector-icons';
 
 
-export default function MainChambaProcesoEmpleador(){
+export default function MainChambaProcesoEmpleador({navigation}){
+
+  const backMain = () => {
+    navigation.navigate('empleadorMain',{screen:'main'})
+  }
+
   return(
       <View style={styles.body}>
         <View>
-            <View style={styles.logoImage}></View>
+            <View style={styles.logoImage}>
+            <FontAwesome name='suitcase' size={110} color={'#fff'}/>
+            </View>
         </View>
         <View>
             <Text style={styles.title}>
@@ -22,7 +29,7 @@ export default function MainChambaProcesoEmpleador(){
             </Text>
         </View>
         <View>
-          <TouchableOpacity style={styles.buttonAceptar}>
+          <TouchableOpacity onPress={backMain} style={styles.buttonAceptar}>
             <Text style={styles.buttonText}>Terminar Chamba</Text>
           </TouchableOpacity>
         </View>
@@ -59,8 +66,8 @@ const styles = StyleSheet.create(
       },
       title:{
         color:'#000',
-        fontSize:24,
-        fontFamily:'Space Grotesk',
+        fontSize:34,
+        // fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'bold',
         marginTop:30,
@@ -68,8 +75,8 @@ const styles = StyleSheet.create(
       },
       descr:{
         color:'#000',
-        fontSize:15,
-        fontFamily:'Space Grotesk',
+        fontSize:22,
+        // fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'normal',
         marginLeft:10,
@@ -82,21 +89,21 @@ const styles = StyleSheet.create(
         marginTop:25,
       },
       buttonAceptar:{
-        width:250,
-        height:50,
+        width:303,
+        height:60,
         alignItems:'center',
         justifyContent:'center',
-        borderRadius:15,
+        borderRadius:10,
         backgroundColor:'#35DB5A',
         marginTop: 80,
         marginBottom:150
       },
       buttonText:{
         color:'#fff',
-        fontSize:22,
+        fontSize:28,
         fontFamily:'normal',
         fontStyle:'normal',
-        fontWeight:'300',
+        fontWeight:'600',
       }
   }
 

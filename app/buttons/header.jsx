@@ -13,7 +13,7 @@ return(
     <View style={styles.statusbar}/>
     <View style={styles.body}>
       <View style={[styles.menuContainer,{backgroundColor:props.color}]}>
-        <TouchableOpacity style={styles.imgContainer}/>
+        <TouchableOpacity onPress={props.exe} style={styles.imgContainer}/>
       </View>
     <View style={styles.messageContainer}>
        <Text style={styles.message} >{props.text}</Text>

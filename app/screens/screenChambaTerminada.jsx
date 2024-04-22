@@ -2,14 +2,21 @@ import { StyleSheet, Text, View, Image, Platform, NativeModules, SafeAreaView, T
 
 import React, { useContext, useCallback, useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Foundation } from '@expo/vector-icons';
 
 
-export default function MainChambaTerminada(){
+export default function MainChambaTerminada({navigation}){
+
+  const backMain=()=>{
+    navigation.navigate('Main',{screen:'mainChamba'})
+  }
+
   return(
       <View style={styles.body}>
         <View>
-            <View style={styles.logoImage}></View>
+            <View style={styles.logoImage}>
+            <Foundation name="dollar" size={185} color="#fff" />
+            </View>
         </View>
         <View>
             <Text style={styles.title}>
@@ -22,11 +29,11 @@ export default function MainChambaTerminada(){
             Gracias por confiar en chambavision para tu gran trabajo.
             </Text>
             <Text>
-              <Text style={{ fontWeight: 'bold'}}>Hasta la proxima Chamba!</Text>
+              <Text style={[styles.descr,{ fontWeight: 'bold'}]}>Hasta la proxima Chamba!</Text>
             </Text>
         </View>
         <View>
-          <TouchableOpacity style={styles.buttonAceptar}>
+          <TouchableOpacity onPress={backMain} style={styles.buttonAceptar}>
             <Text style={styles.buttonText}>Finalizar</Text>
           </TouchableOpacity>
         </View>
@@ -63,8 +70,8 @@ const styles = StyleSheet.create(
       },
       title:{
         color:'#000',
-        fontSize:24,
-        fontFamily:'Space Grotesk',
+        fontSize:34,
+        //fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'bold',
         marginTop:30,
@@ -72,11 +79,11 @@ const styles = StyleSheet.create(
       },
       descr:{
         color:'#000',
-        fontSize:15,
-        fontFamily:'Space Grotesk',
+        fontSize:22,
+        //fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'normal',
-        marginLeft:10,
+        margin:10,
         textAlign:'center',
       },
       viewDes:{
@@ -86,21 +93,21 @@ const styles = StyleSheet.create(
         marginTop:25,
       },
       buttonAceptar:{
-        width:140,
-        height:50,
+        width:180,
+        height:60,
         alignItems:'center',
         justifyContent:'center',
         borderRadius:30,
-        backgroundColor:'#35DB5A',
+        backgroundColor:'#3884fd',
         marginTop:28,
         marginBottom:150
       },
       buttonText:{
         color:'#fff',
-        fontSize:22,
-        fontFamily:'normal',
+        fontSize:28,
+        //fontFamily:'normal',
         fontStyle:'normal',
-        fontWeight:'300',
+        fontWeight:'600',
       }
   }
 

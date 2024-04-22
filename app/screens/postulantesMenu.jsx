@@ -9,7 +9,12 @@ import ProfileCard from '../cards/profileCard';
 
 const StatusBarHeight = Platform.OS === 'ios' ? 50 : 10;
 
-export default function PostulantesMenu(){
+export default function PostulantesMenu({navigation}){
+
+  const goToProfile = () => {
+    navigation.navigate('employerProcess')//TODO: Change Route when profile info screen is released
+  }
+
   return(
     <View style={styles.body}>
       <StatusBar barStyle={'light-content'}/>
@@ -25,7 +30,7 @@ export default function PostulantesMenu(){
         <View style={{width:'100%',height:1,backgroundColor:'#000',marginTop:15}}/>
         <Text style={styles.title}>Postulantes</Text>
         <View style={{alignItems:'center',justifyContent:'center',width:'100%'}}>
-          <ProfileCard/>
+          <ProfileCard exe={goToProfile}/>
         </View>
 
       </ScrollView>
