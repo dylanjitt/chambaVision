@@ -18,30 +18,18 @@ import BucadorMain from './app/screens/screenBusqueda';
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import Perfil from './app/screens/perfil';
 
 const Stack = createStackNavigator();
 
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
-<<<<<<< HEAD
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{header:()=>null}}>
-        <Stack.Screen name='login' component={Login}/>
-        <Stack.Screen name='createAccount' component={CreateAccount}/>
-        <Stack.Screen name='Main' component={Main}/>
-        <Stack.Screen name='chambaMenu' component={ChambaMenu}/>
-        
-      </Stack.Navigator>
-
-    </NavigationContainer>
-=======
     //<CreateAccount/>
     //<MainScreenCrearChamba/>
     //<MainChambaProceso/>
     //<MainScreeninbox/>
-    <BucadorMain/>
->>>>>>> Thompson154
+    <Perfil/>
   );
 }
 
