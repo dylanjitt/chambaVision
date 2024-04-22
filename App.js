@@ -12,6 +12,7 @@ import MainChambaProcesoEmpleador from './app/screens/screenChambaProcesoEmplead
 import MainChambaTerminada from './app/screens/screenChambaTerminada';
 import MainScreenCrearChamba from './app/screens/screenCrearChamba';
 import MainScreeninbox from './app/screens/screenInbox';
+import BucadorMain from './app/screens/screenBusqueda';
 
 
 import {NavigationContainer} from '@react-navigation/native'
@@ -23,6 +24,7 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
+<<<<<<< HEAD
     <NavigationContainer>
       <Stack.Navigator screenOptions={{header:()=>null}}>
         <Stack.Screen name='login' component={Login}/>
@@ -33,6 +35,13 @@ export default function App() {
       </Stack.Navigator>
 
     </NavigationContainer>
+=======
+    //<CreateAccount/>
+    //<MainScreenCrearChamba/>
+    //<MainChambaProceso/>
+    //<MainScreeninbox/>
+    <BucadorMain/>
+>>>>>>> Thompson154
   );
 }
 
