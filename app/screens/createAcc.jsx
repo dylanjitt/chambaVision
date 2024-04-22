@@ -21,6 +21,7 @@ export default function CreateAccount({navigation}){
 
   return(
     <View style={style.body}>
+      <StatusBar barStyle={'default'}/>
       <ScrollView>
         <View style={[style.body,{width:430}]}>
           <View style={{marginTop:StatusBarHeight+15,margin:20,width:'100%',alignItems:'flex-start'}}>
