@@ -8,31 +8,32 @@ import {LinearGradient} from 'expo-linear-gradient'
 
 const StatusBarHeight = Platform.OS === 'ios' ? 50 : 10;
 
-export default function ChambaMenu({navigation}){
+export default function ChambaMenu({navigation,route}){
 
+  const { chamba } = route.params;
   const backMain = () => {
     navigation.navigate('Main',{screen:'mainChamba'})
   }
   return(
     <View style={styles.body}>
       <StatusBar barStyle={'light-content'}/>
-        <ImageBackground style={styles.image} source={{uri:'https://peru21.pe/resizer/jgN0rPRFr-PVE2Gh65x18woLvBE=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/GSDBVZULCZETNDCKGLOYAO6WKQ.jpeg'}}>
+        <ImageBackground style={styles.image} source={{uri:chamba.imagen}}>
           <LinearGradient
             colors={['rgba(0,0,0,0.85)', 'rgba(0,0,0,0)']}
             style={styles.overlay} />
         </ImageBackground>
      
-      <Text style={styles.title}>Necesito Plomero</Text>
-      <Text style={styles.subtitle}>Se necesita plomero para el arreglo de tuberias en mi cocina.</Text>
-      <Text style={styles.text}>Descripcion corta del problema como por ejemplo que empezo a gotear hace 2 dias en la parte de desechos, solo lavamos platos y caen uno que otro monton de arroz, pero no creo que ese sea el problema gotea mucho y no veo fisuras en los tubos de salida.</Text>
-      <Text style={styles.price}>500 Bs.</Text>
+      <Text style={styles.title}>{chamba.title}</Text>
+      <Text style={styles.subtitle}>{chamba.shortDescr}</Text>
+      <Text style={styles.text}>{chamba.descripcion}</Text>
+      <Text style={styles.price}>{chamba.pago} Bs.</Text>
       <TouchableOpacity onPress={backMain} style={styles.button}>
         <Text style={styles.buttonText}>Postular</Text>      
       </TouchableOpacity>
 
       <TouchableOpacity style={{flexDirection:'row',alignItems:'center',justifyContent:'center',margin:40}}>
           <View style={styles.userImage}></View>
-          <Text style={styles.userText}>PandaFernandez</Text>
+          <Text style={styles.userText}>{chamba.usuario}</Text>
       </TouchableOpacity>
 
     </View>

@@ -11,13 +11,13 @@ export default function MainCard(props){
       <View style={styles.body}>
         <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
           <View style={styles.userImage}></View>
-          <Text style={styles.userText}>PandaFernandez</Text>
+          <Text style={styles.userText}>{props.user}</Text>
         </View>
-        <Image style={styles.image} source={{uri:'https://peru21.pe/resizer/jgN0rPRFr-PVE2Gh65x18woLvBE=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/GSDBVZULCZETNDCKGLOYAO6WKQ.jpeg'}}/>
+        <Image style={styles.image} source={{uri:props.img}}/>
         <View >
-          <Text style={styles.title}>Necesito Plomero</Text>
-          <Text style={styles.descr}>Se necesita plomero para el arreglo de tuberías en mi cocina</Text>
-          <Text style={styles.price}>500 Bs</Text>
+          <Text style={styles.title}>{props.title}</Text>
+          <Text style={styles.descr}>{props.shortDescr}</Text>
+          <Text style={styles.price}>{props.pago} Bs</Text>
         </View>
         <TouchableOpacity onPress={props.exe} style={styles.button}>
           <Text  style={styles.buttonText}>Postular</Text>
