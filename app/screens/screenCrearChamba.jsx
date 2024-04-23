@@ -6,7 +6,12 @@ import { MaterialCommunityIcons,Entypo } from '@expo/vector-icons';
 
 const StatusBarHeight = Platform.OS === 'ios' ? 50 : 10;
 
-export default function MainScreenCrearChamba(){
+export default function MainScreenCrearChamba({navigation}){
+
+  const goToMain=()=>{
+    navigation.navigate('empleadorMain', { screen: 'main' })
+  }
+
     return(
         <View style={styles.body}>
             <ScrollView style={{flex:1,width:'100%'}}>
@@ -72,12 +77,12 @@ export default function MainScreenCrearChamba(){
                   <TextInput style={styles.numE} placeholder='Bs.'></TextInput>
                 </View>
                 <View style={styles.view}>
-                  <TouchableOpacity style={styles.botonC}>
+                  <TouchableOpacity onPress={goToMain} style={styles.botonC}>
                     <Text style={styles.buttonText}>Crear Chamba</Text>
                   </TouchableOpacity>
-                  <TouchableOpacity style={styles.botonCa}>
+                  {/* <TouchableOpacity style={styles.botonCa}>
                     <Text style={styles.buttonText}>Cancelar</Text>
-                  </TouchableOpacity>
+                  </TouchableOpacity> */}
                 </View>
                 
             </ScrollView>   
@@ -108,7 +113,7 @@ export default function MainScreenCrearChamba(){
       title:{
         color:'#000',
         fontSize:28,
-        fontFamily:'Space Grotesk',
+        //fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'bold',
         justifyContent:'center',
@@ -118,7 +123,7 @@ export default function MainScreenCrearChamba(){
       title2:{
         color:'#000',
         fontSize:20,
-        fontFamily:'Space Grotesk',
+        //fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'bold',
         margin:10
@@ -192,6 +197,7 @@ export default function MainScreenCrearChamba(){
         shadowOpacity: 0.4,
         shadowRadius: 3.27,
         elevation: 10,
+        marginBottom:40
       },
       botonCa:{
         width:200,
@@ -213,7 +219,7 @@ export default function MainScreenCrearChamba(){
       buttonText:{
         color:'#fff',
         fontSize:18,
-        fontFamily:'Space Grotesk',
+        //fontFamily:'Space Grotesk',
         fontStyle:'normal',
         fontWeight:'600',
       },

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Platform, NativeModules, SafeAreaView, TouchableOpacity, TextInput, StatusBar, Keyboard, TouchableWithoutFeedback, Alert, Button, ScrollView, SectionList, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image, Platform, NativeModules, SafeAreaView, TouchableOpacity, TextInput, StatusBar, Keyboard, TouchableWithoutFeedback, Alert, Button, ScrollView, SectionList, ImageBackground, FlatList } from 'react-native';
 
 import React, { useContext, useCallback, useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
@@ -10,6 +10,11 @@ import ProfileCard from '../cards/profileCard';
 const StatusBarHeight = Platform.OS === 'ios' ? 50 : 10;
 
 export default function PostulantesMenu({navigation}){
+
+  const [postulantes,setPostulantes]=useState([
+    {name:'Andres Dylan Sanchez Oroz',descripcion:'Expecialista en jardinería',ci:'6958824',wpp:'75206757',mail:'dylanjitton2.0@gmail.com'},
+    {name:'Juan ',descripcion:'Expecialista en jardinería',ci:'6958824',wpp:'75206757',mail:'dylanjitton2.0@gmail.com'}
+  ]) 
 
   const goToProfile = () => {
     navigation.navigate('employerProcess')//TODO: Change Route when profile info screen is released
@@ -23,17 +28,31 @@ export default function PostulantesMenu({navigation}){
             colors={['rgba(0,0,0,0.85)', 'rgba(0,0,0,0)']}
             style={styles.overlay} />
         </ImageBackground>
-      <ScrollView>
+      
         <Text style={styles.title}>Necesito Plomero</Text>
         <Text style={styles.text}>Se necesita plomero para el arreglo de tuberias en mi cocina.</Text>
         <Text style={styles.price}>500 Bs.</Text>
         <View style={{width:'100%',height:1,backgroundColor:'#000',marginTop:15}}/>
-        <Text style={styles.title}>Postulantes</Text>
+        <Text style={[styles.title,{marginBottom:5}]}>Postulantes</Text>
         <View style={{alignItems:'center',justifyContent:'center',width:'100%'}}>
-          <ProfileCard exe={goToProfile}/>
+
+
+          <FlatList
+
+          scrollEnabled={'true'}
+          numColumns={2}
+          keyExtractor={item=>item.name}
+          data={postulantes}
+          justifyContent={'center'}
+          alignItems={'center'}
+          renderItem={({item,index})=>(
+            <ProfileCard exe={goToProfile}/>
+          )}
+          />
+
         </View>
 
-      </ScrollView>
+     
     </View>
   )
 }
@@ -43,7 +62,7 @@ const styles = StyleSheet.create(
     body:{
       flex:1,
       justifyContent:'flex-start',
-      alignItems:'center',
+      alignItems:'flex-start',
       backgroundColor:'#fafafa'
     },
     image:{
@@ -68,7 +87,7 @@ const styles = StyleSheet.create(
       fontWeight:'bold',
       color:'#000',
       margin:18,
-      marginLeft:0
+      marginLeft:10
     },
     text:{
       color:'#4b4b4b',
@@ -78,13 +97,13 @@ const styles = StyleSheet.create(
       padding:20,
       paddingTop:0,
       paddingBottom:20,
-      paddingLeft:0
+      paddingLeft:10
     },
     price:{
       fontSize:30,
       color:"#000",
       fontWeight:'700',
-      marginLeft:0
+      marginLeft:10
     },
     button:{
       width:180,
