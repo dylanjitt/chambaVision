@@ -8,6 +8,7 @@ import CreateAccount from './app/screens/createAcc';
 import MainMenu from './app/screens/mainMenu';
 import ChambaMenu from './app/screens/chambaMenu';
 import PostulantesMenu from './app/screens/postulantesMenu';
+import Perfil from './app/screens/perfil';
 import EmpladorMain from './app/screens/empleadorMainMenu';
 import MainChambaProceso from './app/screens/screenChambaProceso';
 import MainChambaProcesoEmpleador from './app/screens/screenChambaProcesoEmpleador';
@@ -37,6 +38,7 @@ export default function App() {
         <Stack.Screen name='done' component={MainChambaTerminada}/>
         <Stack.Screen name='empleadorMain' component={Empleador}/>
         <Stack.Screen name='postulantes' component={PostulantesMenu}/>
+        <Stack.Screen name='profile' component={Perfil}/>
 {/* TODO: Put here when profile screen si avaliable */}
         <Stack.Screen name='employerProcess' component={MainChambaProcesoEmpleador}/>
       </Stack.Navigator>

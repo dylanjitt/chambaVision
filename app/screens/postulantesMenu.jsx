@@ -17,7 +17,7 @@ export default function PostulantesMenu({navigation}){
   ]) 
 
   const goToProfile = () => {
-    navigation.navigate('employerProcess')//TODO: Change Route when profile info screen is released
+    navigation.navigate('profile')//TODO: Change Route when profile info screen is released
   }
 
   return(
