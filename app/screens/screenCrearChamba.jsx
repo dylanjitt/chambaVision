@@ -2,16 +2,16 @@ import { StyleSheet, Text, View, Image, Platform, NativeModules, SafeAreaView, T
 
 import React, { useContext, useCallback, useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons,Entypo } from '@expo/vector-icons';
+
+const StatusBarHeight = Platform.OS === 'ios' ? 50 : 10;
 
 export default function MainScreenCrearChamba(){
     return(
         <View style={styles.body}>
             <ScrollView style={{flex:1,width:'100%'}}>
                 <View>
-                    <TouchableOpacity>
-                        <Image style={styles.volver} source={{uri:'https://th.bing.com/th/id/OIP.qlTqEGd7Qk0aRYBGRoeWSQHaHa?rs=1&pid=ImgDetMain'}}/>
-                    </TouchableOpacity>
+                    
                 </View>
                 <View style={styles.view}>
                     <Text style={styles.title}>
@@ -28,13 +28,22 @@ export default function MainScreenCrearChamba(){
                     <Text style={styles.title2}>
                         Descripcion Breve
                     </Text>
-                    <TextInput style={styles.boxDescB} placeholder='Cuenta en 2 lineas un resumen de tu problema.'></TextInput>
+                    <TextInput style={styles.boxDescB} 
+                    placeholder='Cuenta en 2 lineas un resumen de tu problema.'
+                    multiline
+                    numberOfLines={2}
+                    
+                    ></TextInput>
                 </View>
                 <View>
                     <Text style={styles.title2}>
                         Descripcion Completa
                     </Text>
-                    <TextInput style={styles.boxDescC} placeholder='Cuenta a Mayor detalle el problema que tienes'></TextInput>
+                    <TextInput style={styles.boxDescC} 
+                    placeholder='Cuenta a Mayor detalle el problema que tienes'
+                    multiline
+                    numberOfLines={5}
+                    ></TextInput>
                 </View>
                 <View>
                     <Text style={styles.title2}>
@@ -42,8 +51,8 @@ export default function MainScreenCrearChamba(){
                     </Text>
                 </View>
                 <View style={styles.view}>
-                  <TouchableOpacity>
-                    <Image style={styles.inputImages} source={{uri:'https://cdn-icons-png.flaticon.com/512/1004/1004733.png'}}/>
+                  <TouchableOpacity style={styles.inputImages}>
+                    <Entypo name="circle-with-plus" size={110} color="#fff" />
                   </TouchableOpacity>
                 </View>
                 <View>
@@ -81,6 +90,7 @@ export default function MainScreenCrearChamba(){
       body:{
         flex:1,
         backgroundColor:'#ffffff',
+        paddingTop:StatusBarHeight+10,
       },
       view:{
         marginTop:0,
@@ -127,16 +137,19 @@ export default function MainScreenCrearChamba(){
         height: 100,
         borderWidth:2,
         borderColor:'#555',
-        paddingLeft:15,
+        paddingTop:15,
+        padding:15,
         borderRadius:10,
         margin:13,
+        justifyContent:'flex-start'
       },
       boxDescC:{
         width:400,
         height: 150,
         borderWidth:2,
         borderColor:'#555',
-        paddingLeft:15,
+        paddingTop:15,
+        padding:15,
         borderRadius:10,
         margin:13,
         justifyContent:'flex-start',
@@ -147,7 +160,9 @@ export default function MainScreenCrearChamba(){
         height:130,
         borderRadius:65,
         backgroundColor:'#1fd655',
-        margin:30
+        margin:30,
+        alignItems:'center',
+        justifyContent:'center'
       },
       numE:{
         width:120,

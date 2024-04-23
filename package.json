@@ -13,6 +13,7 @@
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/stack": "^6.3.29",
+    "axios": "^1.6.8",
     "bootstrap-icons": "^1.11.3",
     "expo": "^50.0.15",
     "expo-linear-gradient": "~12.7.2",

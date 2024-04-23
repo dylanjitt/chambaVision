@@ -4,6 +4,8 @@ import React, { useContext, useCallback, useState, useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+import { getAllGigs } from '../../api/gigApi';
+
 import MainCard from '../cards/mainCard';
 import Header from '../buttons/header';
 export default function MainMenu({ navigation }) {
@@ -23,6 +25,28 @@ export default function MainMenu({ navigation }) {
     ]
   )
 
+  const [chambas2, setChambas2]=useState([])
+
+  useEffect(()=>{
+    try {
+      getAllGigs().then((response)=>{
+        const mappedData = response.map(item => ({
+          usuario: 'Raul Alejandro',
+          imagen: item.photoLink || '',
+          title: item.title || '',
+          shortDescr: item.shortDescription || '',
+          descripcion: item.largeDescription || '',
+          pago: item.mount || item.price || '',
+        }));
+        //console.log(mappedData);
+        setChambas2(mappedData);
+      })
+      
+    } catch (error) {
+      console.error('Error al obtener chambas',error)
+    }
+  })
+
   return (
 
     <>
@@ -31,6 +55,18 @@ export default function MainMenu({ navigation }) {
       <View style={styles.body}>
         <ScrollView style={{ flex: 1, width: '100%' }}>
           <View style={styles.body}>
+          {
+              chambas2.map((chamba)=>(
+                <MainCard
+                user={chamba.usuario}
+                img={chamba.imagen}
+                title={chamba.title}
+                shortDescr={chamba.shortDescr}
+                pago={chamba.pago}
+                exe={() => goToMenuChamba(chamba)}
+                />
+              ))
+            }
             {
               chambas.map((chamba)=>(
                 <MainCard

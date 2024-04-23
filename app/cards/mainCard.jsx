@@ -14,7 +14,7 @@ export default function MainCard(props){
           <Text style={styles.userText}>{props.user}</Text>
         </View>
         <Image style={styles.image} source={{uri:props.img}}/>
-        <View >
+        <View style={{width:'100%',paddingLeft:10,paddingRight:10}} >
           <Text style={styles.title}>{props.title}</Text>
           <Text style={styles.descr}>{props.shortDescr}</Text>
           <Text style={styles.price}>{props.pago} Bs</Text>
