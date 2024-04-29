@@ -5,7 +5,9 @@ import { FontAwesome,Zocial } from '@expo/vector-icons';
 
 const StatusBarHeight = Platform.OS === 'ios' ? 50 : 10;
 
-export default function Perfil({ navigation }) {
+export default function Perfil({ navigation,route }) {
+
+  const { perfil } = route.params;
 
   const goToChmambaProcessEmpl = () => {
     navigation.navigate('employerProcess')
@@ -16,16 +18,16 @@ export default function Perfil({ navigation }) {
       <StatusBar style='dark' />
       <View style={styles.dataContainer}>
         <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 25 }}>
-          <TouchableOpacity style={{ marginLeft: 80, width: 161, height: 161, borderRadius: 100, backgroundColor: '#78919d20', alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ marginLeft: 80, width: 161, height: 161, borderRadius: 100, backgroundColor: '#78919d20', alignItems: 'center', justifyContent: 'center' }}>
             <View style={{ width: 128, height: 128, borderRadius: 100, backgroundColor: '#fafafa', alignItems: 'center', justifyContent: 'center' }}>
               {/*
                         imagen del usuario
                         */}
             </View>
-          </TouchableOpacity>
-          <View style={{ marginLeft: 20, alignItems: 'flex-start' }}>
-            <Text style={styles.titleHeader}>Luis Andres Paricollo Parra</Text>
-            <Text style={styles.subtitle}>CI: 616237</Text>
+          </View>
+          <View style={{ marginLeft: 20, alignItems: 'flex-start' ,width:300,}}>
+            <Text style={styles.titleHeader}>{perfil.name}</Text>
+            <Text style={styles.subtitle}>CI: {perfil.ci}</Text>
           </View>
         </View>
         <View >
@@ -34,24 +36,24 @@ export default function Perfil({ navigation }) {
               <View style={{ width: 50, height: 50, borderRadius: 100, backgroundColor: '#25D366', alignItems: 'center', justifyContent: 'center', marginRight: 10 }}>
               <FontAwesome name="whatsapp" size={30} color="#fff" />
               </View>
-              <Text style={styles.subtitle2}>+591 79126364</Text>
+              <Text style={styles.subtitle2}>+591 {perfil.wpp}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 25 }}>
               <View style={{ width: 50, height: 50, borderRadius: 100, backgroundColor: '#3884FD', alignItems: 'center', justifyContent: 'center', marginRight: 10 }}>
               <Zocial name="email" size={26} color="#fff" />
               </View>
-              <Text style={styles.subtitle2}>dylanjitton@gmail.com</Text>
+              <Text style={styles.subtitle2}>{perfil.mail}</Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
       <View style={{ flexDirection: 'row', alignItems: "center", justifyContent: 'center', width: '100%', marginTop: 40 }}>
-        <View style={{ alignItems: 'center', flex: 1 }}>
+        {/* <View style={{ alignItems: 'center', flex: 1 }}>
           <Text style={styles.title2}>Hard Skills:</Text>
           <Text style={styles.subtitle2}>Plomeria</Text>
-        </View>
+        </View> */}
         <View style={{ alignItems: 'center', flex: 1 }}>
-          <Text style={styles.title2}>Soft Skills:</Text>
+          <Text style={[styles.title2,{marginBottom:10}]}>Habilidades:</Text>
           <Text style={styles.subtitle2}>Paciente</Text>
         </View>
       </View>

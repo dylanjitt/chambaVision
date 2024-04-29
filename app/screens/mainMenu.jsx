@@ -38,14 +38,14 @@ export default function MainMenu({ navigation }) {
           descripcion: item.largeDescription || '',
           pago: item.mount || item.price || '',
         }));
-        //console.log(mappedData);
+        console.log(mappedData);
         setChambas2(mappedData);
       })
       
     } catch (error) {
       console.error('Error al obtener chambas',error)
     }
-  })
+  },[])
 
   return (
 
@@ -56,8 +56,9 @@ export default function MainMenu({ navigation }) {
         <ScrollView style={{ flex: 1, width: '100%' }}>
           <View style={styles.body}>
           {
-              chambas2.map((chamba)=>(
+              chambas2.map((chamba,index)=>(
                 <MainCard
+                key={`chambas-${index}`}
                 user={chamba.usuario}
                 img={chamba.imagen}
                 title={chamba.title}
@@ -68,8 +69,9 @@ export default function MainMenu({ navigation }) {
               ))
             }
             {
-              chambas.map((chamba)=>(
+              chambas.map((chamba,index)=>(
                 <MainCard
+                key={`chambas-${index}`}
                 user={chamba.usuario}
                 img={chamba.imagen}
                 title={chamba.title}

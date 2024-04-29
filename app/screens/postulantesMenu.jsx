@@ -13,11 +13,11 @@ export default function PostulantesMenu({navigation}){
 
   const [postulantes,setPostulantes]=useState([
     {name:'Andres Dylan Sanchez Oroz',descripcion:'Expecialista en jardinería',ci:'6958824',wpp:'75206757',mail:'dylanjitton2.0@gmail.com'},
-    {name:'Juan ',descripcion:'Expecialista en jardinería',ci:'6958824',wpp:'75206757',mail:'dylanjitton2.0@gmail.com'}
+    {name:'Juan Manfredo Garcia Perez',descripcion:'Plomero por 5 años',ci:'6958824',wpp:'75206757',mail:'dylanjitton2.0@gmail.com'}
   ]) 
 
-  const goToProfile = () => {
-    navigation.navigate('profile')//TODO: Change Route when profile info screen is released
+  const goToProfile = (perfil) => {
+    navigation.navigate('profile',{perfil})//TODO: Change Route when profile info screen is released
   }
 
   return(
@@ -46,7 +46,7 @@ export default function PostulantesMenu({navigation}){
           justifyContent={'center'}
           alignItems={'center'}
           renderItem={({item,index})=>(
-            <ProfileCard exe={goToProfile}/>
+            <ProfileCard name={item.name} descr={item.descripcion} exe={()=>goToProfile(item)}/>
           )}
           />
 

@@ -39,7 +39,6 @@ export default function App() {
         <Stack.Screen name='empleadorMain' component={Empleador}/>
         <Stack.Screen name='postulantes' component={PostulantesMenu}/>
         <Stack.Screen name='profile' component={Perfil}/>
-{/* TODO: Put here when profile screen si avaliable */}
         <Stack.Screen name='employerProcess' component={MainChambaProcesoEmpleador}/>
       </Stack.Navigator>
 
@@ -53,7 +52,8 @@ function Main(){
   screenOptions={({route})=>({
     tabBarStyle:{
       backgroundColor:'#0A1B2B',
-      borderRadius:10
+      borderTopLeftRadius:10,
+      borderTopRightRadius:10,
     },
     tabBarIcon: ({focused,size,color})=>{
       let iconname;

@@ -10,8 +10,8 @@ export default function ProfileCard(props){
   return(
     <View style={style.body}>
       <Ionicons name='person' size={64} color={'#404040'}/>
-      <Text style={style.person}>Juan Perez</Text>
-      <Text style={style.descr}>Especialista en Jardinería</Text>
+      <Text style={style.person}>{props.name}</Text>
+      <Text style={style.descr}>{props.descr}</Text>
       <TouchableOpacity onPress={props.exe} style={style.button}>
         <Text style={style.buttonText}>Ver perfil</Text>      
       </TouchableOpacity>
@@ -41,7 +41,10 @@ const style = StyleSheet.create({
     fontSize:15,
     fontWeight:'bold',
     color:'#000',
-    margin:10
+    margin:10,
+    textAlign:'center',
+    paddingLeft:10,
+    paddingRight:10
   },
   descr:{
     fontSize:12,
